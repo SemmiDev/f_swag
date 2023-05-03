@@ -1,0 +1,33 @@
+basePath: /api
+host: localhost:3000
+info:
+  contact: {}
+  description: Upload File API with Go and Fiber
+  title: Upload File API
+  version: "1"
+paths:
+  /upload:
+    post:
+      consumes:
+      - multipart/form-data
+      description: Upload file to server
+      parameters:
+      - description: File to upload
+        in: formData
+        name: file
+        required: true
+        type: file
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            additionalProperties: true
+            type: object
+      summary: Upload file
+      tags:
+      - upload
+schemes:
+- http
+swagger: "2.0"
